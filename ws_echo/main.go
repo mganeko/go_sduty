@@ -4,7 +4,8 @@ package main
 
 import (
     "io"
-    "net/http"
+		"net/http"
+		"fmt"
 
     "golang.org/x/net/websocket"
 )
@@ -24,7 +25,8 @@ func main() {
             s.ServeHTTP(w, req)
         }
     )
-    */
+		*/
+		fmt.Printf("start ws server localhost:3001\r\n")
     err := http.ListenAndServe(":3001", nil)
     if err != nil {
         panic("ListenAndServe: " + err.Error())

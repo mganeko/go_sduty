@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <body>
-    ws echo test
+    ws echo test<br />
+    <input type="text" id="input_text"></input>
+    <button onclick="sendText()">send</button><br />
+    <div id="message_area"></div>
   </body>
   <script>
     const wsUrl = 'ws://localhost:3001/'
@@ -16,9 +19,23 @@
     ws.onmessage = function(evt) { 
       console.log('onmessage() evt:', evt);
       console.log('message.data=', evt.data);
+      showMessage(evt.data);
     }; 
     ws.onerror = function(evt) { 
       console.error('onerror() evt:', evt);
     };
+
+    const inputText = document.getElementById('input_text');
+    const messageArea = document.getElementById('message_area');
+    function sendText() {
+      const text = inputText.value;
+      ws.send(text);
+      inputText.value = '';
+      inputText.focus();
+    }
+
+    function showMessage(msg) {
+      messageArea.innerHTML += (msg + '<br />')
+    }
   </script>
 </html>
