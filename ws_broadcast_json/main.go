@@ -4,7 +4,8 @@ import (
     "log"
     "net/http"
 
-    "github.com/gorilla/websocket"
+		"github.com/gorilla/websocket"
+		//"golang.org/x/net/websocket"
 )
 
 var clients = make(map[*websocket.Conn]bool) // 接続されるクライアント
