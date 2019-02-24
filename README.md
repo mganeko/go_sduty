@@ -10,7 +10,7 @@
 - Simple echo servert with WebSocket
   - http server is not included. Please copy www/index.html to your web server.
 - WebSocketを使ったシンプルなエコーサーバー
-  - http サーバー機能は省いています。www/index.htmlを自分のWebサーバーにコピーしてください
+  - httpサーバー機能は省いています。www/index.htmlを自分のWebサーバーにコピーしてください
 
 ### ws_broadcast_data
 
