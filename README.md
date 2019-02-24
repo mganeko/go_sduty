@@ -14,6 +14,7 @@
 
 ### ws_broadcast_data
 
+- using https://github.com/gorilla/websocket
 - Simple broadcast servert with WebSocket
   - data will not send back to sender client.
   - http server is not included. Please copy www/chat.html to your web server.
@@ -23,6 +24,7 @@
 
 ### ws_broadcast_json
 
+- using https://github.com/gorilla/websocket
 - Simple broadcast servert with WebSocket
   - data will not send back to sender client.
   - use Json struct
@@ -34,6 +36,7 @@
 
 ### ws_gorutine
 
+- using https://github.com/gorilla/websocket
 - Simple broadcast servert with WebSocket
   - use Json struct
   - use gorutine for broadcasting
@@ -42,6 +45,8 @@
   - JSONに相当するstructを定義して使っています
   - goroutineを使って、送信を行っています
   - httpサーバー機能は省いています。www/chat.htmlを自分のWebサーバーにコピーしてください
+  - こちらを参考にしています　https://qiita.com/vitor/items/4a257cc24f6a07e6e118
+  
 
 
 
