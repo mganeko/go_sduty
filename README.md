@@ -11,6 +11,7 @@
   - http server is not included. Please copy www/index.html to your web server.
 - WebSocketを使ったシンプルなエコーサーバー
   - httpサーバー機能は省いています。www/index.htmlを自分のWebサーバーにコピーしてください
+  - こちらの記事を参考にしています https://qiita.com/m0a/items/f6405bc29073a7609050
 
 ### ws_broadcast_data
 
@@ -46,7 +47,7 @@
   - goroutineを使って、送信を行っています
   - httpサーバー機能は省いています。www/chat.htmlを自分のWebサーバーにコピーしてください
   - こちらを参考にしています　https://qiita.com/vitor/items/4a257cc24f6a07e6e118
-  
+
 
 
 
