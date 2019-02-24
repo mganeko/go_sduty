@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+	ws echo test<br />
+	<input type="text" id="input_text"></input>
+	<button onclick="sendText()">send</button><br />
+	<div id="message_area"></div>
+</body>
+<script>
+	const wsUrl = 'ws://localhost:3001/'
+	const ws = new WebSocket(wsUrl);
+	ws.onopen = function (evt) {
+		console.log('onopen() evt:', evt);
+		//ws.send("hello");
+		sendMessage("hello")
+	};
+	ws.onclose = function (evt) {
+		console.log('onclose() evt:', evt);
+	};
+	ws.onmessage = function (evt) {
+		console.log('onmessage() evt:', evt);
+		console.log('message.data=', evt.data);
+		showMessage(evt.data);
+	};
+	ws.onerror = function (evt) {
+		console.error('onerror() evt:', evt);
+	};
+
+	const inputText = document.getElementById('input_text');
+	const messageArea = document.getElementById('message_area');
+	function sendText() {
+		const text = inputText.value;
+		//ws.send(text);
+		sendMessage(text)
+		inputText.value = '';
+		inputText.focus();
+	}
+
+	function showMessage(msg) {
+		messageArea.innerHTML += (msg + '<br />')
+	}
+
+	function sendMessage(text) {
+		//const msg =  JSON.stringify({message: text});
+		const msg = text;
+		ws.send(msg);
+	}
+</script>
+
+</html>
